@@ -5,11 +5,11 @@ return {
     "anuvyklack/animation.nvim",
   },
   keys = {
-    { "<leader>M", "<cmd>WindowsMaximize<cr>", desc = "maximize" },
-    { "<leader>we", "<cmd>WindowsEqualize<cr>", desc = "equalize" },
-    { "<leader>wh", "<cmd>WindowsMaximizeHorizontally<cr>", desc = "horizontally" },
-    { "<leader>wm", "<cmd>WindowsMaximize<cr>", desc = "maximize" },
-    { "<leader>wv", "<cmd>WindowsMaximizeVertically<cr>", desc = "vertically" },
+    { "<leader>M",  cmd("WindowsMaximize"),             desc = "maximize" },
+    { "<leader>we", cmd("WindowsEqualize"),             desc = "equalize" },
+    { "<leader>wh", cmd("WindowsMaximizeHorizontally"), desc = "horizontally" },
+    { "<leader>wm", cmd("WindowsMaximize"),             desc = "maximize" },
+    { "<leader>wv", cmd("WindowsMaximizeVertically"),   desc = "vertically" },
   },
   opts = {},
 }

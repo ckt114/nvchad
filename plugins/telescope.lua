@@ -47,21 +47,32 @@ return {
       end,
       desc = "find string in buffer",
     },
-    { "<leader>ft", "<cmd>Telescope themes<cr>", desc = "find themes" },
+    { "<leader>ft", cmd("Telescope themes"), desc = "find themes" },
   },
-  opts = {
-    extensions_list = { "repo", "undo" },
-    -- defaults = {
-    --   sorting_strategy = "ascending",
-    --   layout_config = {
-    --     horizontal = {
-    --       prompt_position = "top",
-    --       preview_width = 0.70,
-    --     },
-    --     width = 0.95,
-    --     height = 0.95,
-    --     preview_cutoff = 200,
-    --   },
-    -- },
-  },
+  -- opts = {
+  --   extensions = {
+  --     project = {
+  --       base_dirs = { path = "~/Projects" },
+  --       sync_with_nvim_tree = true,
+  --     },
+  --   },
+  --   extensions_list = { "project", "repo", "themes", "undo" },
+  -- },
+  config = function(_, opts)
+    dofile(vim.g.base46_cache .. "telescope")
+    local telescope = require "telescope"
+
+    opts.extensions = {
+      project = {
+        base_dirs = { "~/Projects" },
+        sync_with_nvim_tree = true,
+      },
+    }
+    telescope.setup(opts)
+
+    local extensions_list = { "project", "themes", "undo" }
+    for _, ext in ipairs(extensions_list) do
+      telescope.load_extension(ext)
+    end
+  end,
 }

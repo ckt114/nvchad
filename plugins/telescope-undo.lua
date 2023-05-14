@@ -1,7 +1,7 @@
 return {
   "debugloop/telescope-undo.nvim",
   keys = {
-    { "<leader>tu", "<cmd>Telescope undo<cr>", desc = "toggle undo" },
+    { "<leader>tu", cmd("Telescope undo"), desc = "toggle undo" },
   },
   config = function()
   end,

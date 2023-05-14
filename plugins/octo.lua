@@ -2,11 +2,11 @@ return {
   "pwntester/octo.nvim",
   cmd = "Octo",
   keys = {
-    { "<leader>gL", "<cmd>Octo pr list<cr>", desc = "list prs" },
-    { "<leader>ge", ":Octo pr edit ", desc = "edit pr" },
-    { "<leader>gr", "<cmd>Octo pr create<cr>", desc = "create pr" },
-    { "<leader>gR", "<cmd>Octo review start<cr>", desc = "review pr" },
-    { "<leader>gS", "<cmd>Octo review submit<cr>", desc = "submit review" },
+    { "<leader>gL", cmd("Octo pr list"),       desc = "list prs" },
+    { "<leader>ge", ":Octo pr edit ",          desc = "edit pr" },
+    { "<leader>gr", cmd("Octo pr create"),     desc = "create pr" },
+    { "<leader>gR", cmd("Octo review start"),  desc = "review pr" },
+    { "<leader>gS", cmd("Octo review submit"), desc = "submit review" },
   },
   opts = {
     mappings = {

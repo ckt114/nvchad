@@ -1,7 +1,7 @@
 return {
   "folke/twilight.nvim",
   keys = {
-    { "<leader>T", "<cmd>Twilight<cr>", desc = "twilight" },
+    { "<leader>D", cmd("Twilight"), desc = "dimming" },
   },
   opts = {}
 }

@@ -22,7 +22,7 @@ return {
   commit = "0db85a70248f9a90e61af5cdbafe5d9f4320f719",
   cmd = "NvimTreeToggle",
   keys = {
-    { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "toggle nvimtree" },
+    { "<leader>e", cmd("NvimTreeToggle"), desc = "nvimtree" },
   },
   opts = {
     actions = {

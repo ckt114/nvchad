@@ -17,6 +17,7 @@ M.disabled = {
     ["<leader>D"] = "",
     ["<leader>fm"] = "",
     ["<leader>h"] = "",
+    ["<leader>n"] = "",
     ["<leader>ph"] = "",
     ["<leader>pt"] = "",
     ["<leader>q"] = "",
@@ -34,6 +35,9 @@ M.disabled = {
 }
 
 M.general = {
+  i = {
+    ["<C-c>"] = { "<esc>", "escape" },
+  },
   n = {
     ["<tab>"] = { "<c-w><c-w>", "move round", opts = { nowait = true } },
     ["<leader>bk"] = {
@@ -43,7 +47,13 @@ M.general = {
       "close all buffers",
     },
     ["<leader>bn"] = { cmd("enew"), "new buffer" },
-    ["<leader>n"] = { cmd("set nu!"), "line number" },
+    ["<leader>N"] = {
+      function()
+        vim.cmd("set nu!")
+        vim.cmd("set rnu!")
+      end,
+      "line number" },
+    ["<leader>r"] = { cmd("e!"), "reload file" },
     ["<leader><tab>"] = { cmd("tabnew"), "new tab" },
     ["<leader>tb"] = {
       function()
@@ -59,6 +69,23 @@ M.general = {
   },
   t = {
     ["jk"] = { "<C-\\><C-n>", desc = "term normal mode" },
+  },
+}
+
+M.comment = {
+  n = {
+    ["<leader>/"] = {
+      function()
+        require("Comment.api").toggle.linewise.current()
+      end,
+      "comment",
+    },
+  },
+  v = {
+    ["<leader>/"] = {
+      "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>",
+      "comment",
+    },
   },
 }
 
@@ -106,6 +133,12 @@ M.nvterm = {
       end,
       "toggle vertical term",
     },
+    ["<leader><space>"] = {
+      function()
+        require("nvterm.terminal").toggle("vertical")
+      end,
+      "terminal",
+    },
   },
   t = {
     ["<leader>th"] = {
@@ -119,6 +152,12 @@ M.nvterm = {
         require("nvterm.terminal").toggle("vertical")
       end,
       "toggle vertical term",
+    },
+    ["<leader><space>"] = {
+      function()
+        require("nvterm.terminal").toggle("vertical")
+      end,
+      "terminal",
     },
   },
 }

@@ -1,7 +1,7 @@
 return {
   "andrewferrier/wrapping.nvim",
   keys = {
-    { "<leader>tw", "<cmd>ToggleWrapMode<cr>", desc = "toggle wrap" },
+    { "<leader>tw", cmd("ToggleWrapMode"), desc = "toggle wrap" },
   },
   opts = {},
 }

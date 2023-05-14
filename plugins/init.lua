@@ -1,3 +1,7 @@
+function _G.cmd(command)
+  return table.concat({ "<cmd>", command, "<cr>" })
+end
+
 return {
   {
     "max397574/better-escape.nvim",

@@ -21,10 +21,10 @@ return {
   {
     "williamboman/mason.nvim",
     keys = {
-      { "<leader>ma", "<cmd>MasonInstallAll<cr>", desc = "mason install all" },
-      { "<leader>mI", "<cmd>Mason<cr>",           desc = "mason info" },
-      { "<leader>mi", ":MasonInstall ",           desc = "mason install" },
-      { "<leader>ml", "<cmd>MasonLog<cr>",        desc = "mason log" },
+      { "<leader>ma", cmd("MasonInstallAll"), desc = "mason install all" },
+      { "<leader>mI", cmd("Mason"),           desc = "mason info" },
+      { "<leader>mi", ":MasonInstall ",       desc = "mason install" },
+      { "<leader>ml", cmd("MasonLog"),        desc = "mason log" },
     },
     opts = {
       ensure_installed = {
@@ -90,7 +90,7 @@ return {
           builtins.formatting.beautysh,      -- bash, sh, zsh
           builtins.formatting.gofmt,         -- go
           builtins.formatting.prettier,      -- markdown, json, yaml
-          -- builtins.formatting.stylua, -- lua
+          builtins.formatting.stylua, -- lua
           builtins.formatting.terrafmt,      -- terraform inside markdown
           builtins.formatting.terraform_fmt, -- terraform
 

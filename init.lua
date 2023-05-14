@@ -1,6 +1,8 @@
 local opt = vim.opt
 
 opt.relativenumber = true
+opt.conceallevel = 2
+opt.wrap = false
 
 local function augroup(name)
   return vim.api.nvim_create_augroup("nvchad_" .. name, { clear = true })

@@ -3,6 +3,6 @@ return {
   cmd = "UndotreeToggle",
   enabled = false,
   keys = {
-    { "<leader>tu", "<cmd>UndotreeToggle<cr>", desc = "toggle undotree" },
+    { "<leader>tu", cmd("UndotreeToggle"), desc = "toggle undotree" },
   },
 }
