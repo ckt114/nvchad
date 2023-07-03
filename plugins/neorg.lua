@@ -5,7 +5,7 @@ return {
   ft = { "norg" },
   event = "VeryLazy",
   keys = {
-    { "<leader>I", cmd "Neorg index", desc = "neorg index" },
+    { "<leader>I", cmd "Neorg index", desc = "neorg" },
     { "<leader>nc", cmd "Neorg toggle-concealer", desc = "toggle concealer" },
     { "<leader>ni", cmd "Neorg index", desc = "neorg index" },
     { "<leader>nj", ":Neorg journal ", desc = "neorg journal" },

@@ -13,7 +13,7 @@ local lsp_servers = {
   "phpactor",
   "pyright",
   "ruby_ls",
-  "terraformls",
+  -- "terraformls",
   "yamlls",
 }
 
@@ -64,7 +64,7 @@ return {
         -- "phpactor",
         "pyright",
         -- "ruby-lsp",
-        "terraform-ls",
+        -- "terraform-ls",
         "yaml-language-server",
       },
     },
@@ -91,8 +91,8 @@ return {
           builtins.formatting.gofmt,         -- go
           builtins.formatting.prettier,      -- markdown, json, yaml
           builtins.formatting.stylua, -- lua
-          builtins.formatting.terrafmt,      -- terraform inside markdown
-          builtins.formatting.terraform_fmt, -- terraform
+          -- builtins.formatting.terrafmt,      -- terraform inside markdown
+          -- builtins.formatting.terraform_fmt, -- terraform
 
           builtins.diagnostics.ansiblelint,
           builtins.diagnostics.flake8,
@@ -104,7 +104,7 @@ return {
           builtins.diagnostics.pylint,
           builtins.diagnostics.reek,       -- ruby
           builtins.diagnostics.shellcheck, -- sh
-          builtins.diagnostics.terraform_validate,
+          -- builtins.diagnostics.terraform_validate,
           builtins.diagnostics.tfsec,
           builtins.diagnostics.yamllint,
         }

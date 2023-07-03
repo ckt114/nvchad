@@ -5,16 +5,21 @@ local M = {}
 local highlights = require("custom.highlights")
 
 M.ui = {
-  theme = "kanagawa",
+  theme = "one_light",
   theme_toggle = { "one_light", "kanagawa" },
   -- extended_integrations = { "alpha" },
   hl_override = highlights.override,
   hl_add = highlights.add,
   statusline = {
-    theme = "default", -- default/vscode/vscode_colored/minimal
-    -- default/round/block/arrow separators work only for default statusline theme
-    -- round and block will work for minimal theme only
     separator_style = "block",
+    overriden_modules = function()
+      local st_modules = require "nvchad.statusline.default"
+      return {
+        cursor_position = function()
+          return st_modules.cursor_position() .. "%l,%c "
+        end,
+      }
+    end,
   },
   tabufline = {
     overriden_modules = function()

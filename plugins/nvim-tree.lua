@@ -48,6 +48,16 @@ return {
       icons = {
         git_placement = "after",
         glyphs = {
+          folder = {
+            arrow_closed = "",
+            arrow_open = "",
+            default = "",
+            open = "",
+            empty = "",
+            empty_open = "",
+            symlink = "",
+            symlink_open = "",
+          },
           git = {
             ignored = "",
           },

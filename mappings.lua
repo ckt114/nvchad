@@ -37,12 +37,13 @@ M.disabled = {
 M.general = {
   i = {
     ["<C-c>"] = { "<esc>", "escape" },
+    ["jk"] = { "<esc>", "escape" },
   },
   n = {
     ["<tab>"] = { "<c-w><c-w>", "move round", opts = { nowait = true } },
     ["<leader>bk"] = {
       function()
-        require("nvchad_ui.tabufline").closeAllBufs()
+        require("nvchad.tabufline").closeAllBufs()
       end,
       "close all buffers",
     },
@@ -52,8 +53,8 @@ M.general = {
         vim.cmd("set nu!")
         vim.cmd("set rnu!")
       end,
-      "line number" },
-    ["<leader>r"] = { cmd("e!"), "reload file" },
+      "number" },
+    ["<leader>r"] = { cmd("e!"), "reload" },
     ["<leader><tab>"] = { cmd("tabnew"), "new tab" },
     ["<leader>tb"] = {
       function()
@@ -102,12 +103,12 @@ M.gitsigns = {
 
 M.lspconfig = {
   n = {
-    ["<leader>F"] = {
-      function()
-        vim.lsp.buf.format({ async = true })
-      end,
-      "format code",
-    },
+    -- ["<leader>F"] = {
+    --   function()
+    --     vim.lsp.buf.format({ async = true })
+    --   end,
+    --   "format code",
+    -- },
     ["<leader>la"] = {
       function()
         vim.lsp.buf.code_action()
@@ -166,43 +167,43 @@ M.tabufline = {
   n = {
     ["<S-l>"] = {
       function()
-        require("nvchad_ui.tabufline").tabuflineNext()
+        require("nvchad.tabufline").tabuflineNext()
       end,
       "goto next buffer",
     },
     ["<S-h>"] = {
       function()
-        require("nvchad_ui.tabufline").tabuflinePrev()
+        require("nvchad.tabufline").tabuflinePrev()
       end,
       "goto prev buffer",
     },
     ["-"] = {
       function()
-        require("nvchad_ui.tabufline").move_buf(-1)
+        require("nvchad.tabufline").move_buf(-1)
       end,
       "move buffer left",
     },
     ["="] = {
       function()
-        require("nvchad_ui.tabufline").move_buf(1)
+        require("nvchad.tabufline").move_buf(1)
       end,
       "move buffer right",
     },
     ["<leader>d"] = {
       function()
         local bufs = vim.fn.getbufinfo({ buflisted = true })
-        require("nvchad_ui.tabufline").close_buffer()
+        require("nvchad.tabufline").close_buffer()
         if not bufs[2] then
           require("alpha").start(true)
         end
       end,
-      "close buffer",
+      "close",
     },
     ["<leader>bd"] = {
       function()
-        require("nvchad_ui.tabufline").close_buffer()
+        require("nvchad.tabufline").close_buffer()
       end,
-      "close buffer",
+      "close",
     },
   },
 }
