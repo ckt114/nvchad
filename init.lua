@@ -57,11 +57,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.filetype.add({
-  pattern = {
-    [".*yaml.tftpl"] = "go",
-  },
   extension = {
     tf = "terraform",
+    tftpl = "go",
+    tmpl  = "go",
   },
 })
 
