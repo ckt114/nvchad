@@ -52,8 +52,8 @@ M.general = {
         vim.cmd("set nu!")
         vim.cmd("set rnu!")
       end,
-      "line number" },
-    ["<leader>r"] = { cmd("e!"), "reload file" },
+      "number" },
+    ["<leader>r"] = { cmd("e!"), "reload" },
     ["<leader><tab>"] = { cmd("tabnew"), "new tab" },
     ["<leader>tb"] = {
       function()
@@ -196,13 +196,13 @@ M.tabufline = {
           require("alpha").start(true)
         end
       end,
-      "close buffer",
+      "close",
     },
     ["<leader>bd"] = {
       function()
         require("nvchad_ui.tabufline").close_buffer()
       end,
-      "close buffer",
+      "close",
     },
   },
 }
