@@ -6,9 +6,8 @@ local M = {}
 
 ---@type Base46HLGroupsList
 M.override = {
-  Comment = {
-    italic = true,
-  },
+  Comment = { italic = true },
+  St_NormalMode = { bg = "#00df7d" },
 }
 
 ---@type HLTable
