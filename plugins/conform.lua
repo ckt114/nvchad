@@ -3,11 +3,15 @@ return {
   opts = {
     formatters_by_ft = {
       go = { "gofmt" },
+      hcl = { "terraform_fmt" },
+      javascript = { "prettier" },
+      json = { "prettier" },
       lua = { "stylua" },
-      markdown = { "mdformat" },
+      markdown = { "prettier" },
       python = { "isort", "black" },
-      javascript = { { "prettierd", "prettier" } },
       terraform = { "terraform_fmt" },
+      typescript = { "prettier" },
+      vue = { "prettier" },
     },
   },
   lazy = false,
